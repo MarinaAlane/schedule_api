@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: marina
+  password: 12345678
+  host: localhost
+
+development:
+  <<: *default
+  database: schedule_api_development
+
+test:
+  <<: *default
+  database: schedule_api_test
+
+production:
+  <<: *default
+  database: schedule_api_production
+  username: marina
+  password: 12345678
